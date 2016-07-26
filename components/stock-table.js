@@ -20,7 +20,7 @@ export default ({
 					<th>最高</th>
 					<th>最低</th>
 				</tr>
-				<thead>
+				</thead>
 			<tbody>
 			{rows}
 			</tbody>

@@ -3,7 +3,7 @@ var HtmlWebpackPlugin = require('html-webpack-plugin')
 var OpenBrowserPlugin = require('open-browser-webpack-plugin')
 
 module.exports = {
-	devtool:'inline-source-map',
+	devtool:"inline-source-map",
 	entry:__dirname + "/index.js",
 	resolve:{
 		extensions:['','.js','.jsx']

@@ -5,16 +5,22 @@ import {
 } from 'redux'
 import thunk from 'redux-thunk'
 import rootReducer from '../reducers'
+import {
+	getProducts
+} from '../middlewares/api'
 
 const middleWares = [
-	thunk
+	thunk, getProducts
 ];
 
 export default function configureStore(initStores) {
 	const store = createStore(
 		rootReducer,
 		initStores,
-		applyMiddleware(...middleWares)
+		compose(
+			applyMiddleware(...middleWares),
+			window.devToolsExtension ? window.devToolsExtension() : f => f
+		)
 	)
 	return store;
 }
