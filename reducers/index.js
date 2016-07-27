@@ -5,28 +5,22 @@ import {
 import * as ActionTypes from '../actions/constants'
 
 
-const dataArrived = (state = {}, action) => {
+const dataArrived = (state = [], action) => {
 	switch (action.type) {
 		case ActionTypes.DATA_ARRIVED:
-			return Object.assign({}, state, {
-				stockdatas: action.data
-			})
+			return [...action.data];
 		default:
 			return state;
 	}
 }
 
-const addStock = (state = {}, action) => {
+const addStock = (state = [], action) => {
 	switch (action.type) {
 		case ActionTypes.ADD_STOCK:
-			let codes = state.stockcodes || [];
-			if (codes.includes(action.code)) {
+			if (state.includes(action.code)) {
 				return state;
 			} else {
-				codes.push(action.code);
-				return Object.assign({}, state, {
-					stockcodes: codes
-				})
+				return[action.code,...state];
 			}
 		default:
 			return state;

@@ -1,14 +1,29 @@
 import React from 'react'
+import _ from 'lodash'
 
 export default ({
-	stock
-}) => (
-	<tr>
-		<td>{code}</td>
-		<td>{name}</td>
-		<td>{current}</td>
-		<td>{open}</td>
-		<td>{high}</td>
-		<td>{low}</td>
-	</tr>
-);
+	stock = {}
+}) => {
+	if (_.isEmpty(stock)) {
+		<tr>
+				<td></td>
+				<td></td>
+				<td></td>
+				<td></td>
+				<td></td>
+				<td></td>
+			</tr>
+	}
+	else {
+		return (
+			<tr>
+				<td>{stock.code}</td>
+				<td>{stock.name}</td>
+				<td>{stock.current}</td>
+				<td>{stock.open}</td>
+				<td>{stock.high}</td>
+				<td>{stock.low}</td>
+			</tr>
+		);
+	}
+};

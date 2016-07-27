@@ -9,6 +9,7 @@ import {
 import configureStore from './stores/configureStore'
 import App from './components/index'
 import StockApp from './containers/index'
+import {queryData,queryDataAsync} from './actions/index'
 
 const initStores = {
 	stockcodes: ['sh601003', 'sh601001'],
@@ -16,6 +17,7 @@ const initStores = {
 }
 
 const store = configureStore(initStores);
+store.dispatch(queryDataAsync());
 
 render(
 	<Provider store={store}>

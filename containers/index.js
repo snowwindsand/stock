@@ -4,28 +4,32 @@ import React, {
 import {
 	connect
 } from 'react-redux'
+import {bindActionCreators} from 'redux'
 import StockCode from '../components/stock-code'
 import StockTable from '../components/stock-table'
-import {
-	addStock
-} from '../actions/index'
+import * as StockActions from '../actions/index'
 
 class StockApp extends Component {
 	constructor(props) {
 		super(props);
-		this.handleAdd.bind(this);
+		this.handleAdd = this.handleAdd.bind(this);
 	}
 	handleAdd(code) {
 		console.log(code);
+		const {actions} = this.props;
+		actions.addStock(code);
 	}
+	//mapStateToProps已经转换
 	render() {
 		const {
 			stocks
 		} = this.props;
 		return (
-			<div>
-				<StockCode handleAdd={this.handleAdd} />
-				<StockTable stocks={stocks} />
+			<div className="container">
+				<div className="row">
+					<StockCode handleAdd={this.handleAdd} />
+					<StockTable stocks={stocks} />
+				</div>
 			</div>
 		)
 	}
@@ -39,7 +43,7 @@ const mapStateToProps = (state) => {
 
 const mapDispatchToProps = (dispatch) => {
 	return {
-		addStock
+		actions:bindActionCreators(StockActions,dispatch)
 	}
 }
 

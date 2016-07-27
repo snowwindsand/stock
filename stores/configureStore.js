@@ -5,12 +5,10 @@ import {
 } from 'redux'
 import thunk from 'redux-thunk'
 import rootReducer from '../reducers'
-import {
-	getProducts
-} from '../middlewares/api'
+import api from '../middlewares/api'
 
 const middleWares = [
-	thunk, getProducts
+	thunk, ...api
 ];
 
 export default function configureStore(initStores) {

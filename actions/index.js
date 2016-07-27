@@ -21,6 +21,14 @@ export const queryData = () => {
 	}
 }
 
+export const queryDataAsync = ()=>{
+	return dispatch=>{
+		setInterval(()=>{
+			dispatch(queryData());
+		},2000);
+	}
+}
+
 export const dataArrived = (data) => {
 	return {
 		type: Actions.DATA_ARRIVED,

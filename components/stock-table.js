@@ -2,7 +2,7 @@ import React from 'react'
 import StockRow from './stock-row'
 
 export default ({
-	stocks
+	stocks =[]
 }) => {
 	let rows = [];
 	stocks.map((stock) => {
@@ -10,7 +10,7 @@ export default ({
 	});
 
 	return (
-		<table>
+		<table className="col-md-8 table table-striped table-borded">
 			<thead>
 				<tr>
 					<th>代码</th>
