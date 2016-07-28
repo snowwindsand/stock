@@ -35,3 +35,10 @@ export const dataArrived = (data) => {
 		data
 	}
 }
+
+export const errorHappended = (errormsg) => {
+	return{
+		type:Actions.ERROR_HAPPEN,
+		errormsg
+	}
+}

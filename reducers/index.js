@@ -27,6 +27,10 @@ const addStock = (state = [], action) => {
 	}
 }
 
+const errorReceived= (state={},action) => {
+	
+}
+
 const rootReducer = combineReducers({
 	stockdatas: dataArrived,
 	stockcodes: addStock

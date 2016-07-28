@@ -45,7 +45,10 @@ const queryData = store => next => action => {
 					}
 				}
 				store.dispatch(Actions.dataArrived(result));
-            }
+            },
+			error:function(xhr,text,error){
+				store.dispatch(Actions.errorHappended(text));
+			}
 		});
 	}
 	return next(action);

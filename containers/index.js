@@ -4,6 +4,7 @@ import React, {
 import {
 	connect
 } from 'react-redux'
+import {createSelector} from 'reselect'
 import {bindActionCreators} from 'redux'
 import StockCode from '../components/stock-code'
 import StockTable from '../components/stock-table'
@@ -35,11 +36,26 @@ class StockApp extends Component {
 	}
 }
 
-const mapStateToProps = (state) => {
+const dataSelector = (state) => state.stockdatas
+const codeSelector = (state) => {
+	return state.stockcodes
+}
+
+const stocksSelector = createSelector(
+	[dataSelector,codeSelector],
+	(stockdatas,stockcodes)=>{
+		return{
+			stocks:stockdatas,
+			codes:stockcodes
+		}
+	}
+)
+
+/*const mapStateToProps = (state) => {
 	return {
 		stocks: state.stockdatas
 	}
-}
+}*/
 
 const mapDispatchToProps = (dispatch) => {
 	return {
@@ -48,6 +64,6 @@ const mapDispatchToProps = (dispatch) => {
 }
 
 export default connect(
-	mapStateToProps,
+	stocksSelector,
 	mapDispatchToProps
 )(StockApp)
