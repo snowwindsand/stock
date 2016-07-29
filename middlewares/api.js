@@ -12,14 +12,14 @@ const queryData = store => next => action => {
 			stockdatas
 		} = store.getState();
 		let codes = stockcodes.join(',');
-		let myHeaders = new Headers({
+		/*let myHeaders = new Headers({
 			"Content-Type": "application/x-javascript"
 		});
 		let init = {
 			method: 'GET',
 			headers: myHeaders,
 			mode: 'no-cors'
-		};
+		};*/
 		/*fetch(stockUrl + codes,init).then(response=>{
 			console.log("Response:",response);
 			return response.text();})
@@ -47,7 +47,7 @@ const queryData = store => next => action => {
 				store.dispatch(Actions.dataArrived(result));
             },
 			error:function(xhr,text,error){
-				store.dispatch(Actions.errorHappended(text));
+				store.dispatch(Actions.errorHappended(text))
 			}
 		});
 	}

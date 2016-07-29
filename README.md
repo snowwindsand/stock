@@ -3,5 +3,8 @@
 主要是用来从sina抓取指定的股票数据并显示。
 
 # Change Log
-2016-7-28  
+
+## 2016-7-29
+加入router，并将代码操作引入到router
+## 2016-7-28  
 引入reselect,eslint
