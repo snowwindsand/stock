@@ -5,7 +5,8 @@
   "main": "bundle.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "webpack-dev-server --progress"
+    "start": "webpack-dev-server --progress",
+    "build": "webpack --config webpack.config.js"
   },
   "keywords": [
     "stock",
@@ -22,10 +23,14 @@
     "babel-preset-es2015": "^6.9.0",
     "babel-preset-react": "^6.11.1",
     "css-loader": "^0.23.1",
-    "eslint": "^3.1.1",
+    "eslint": "^3.2.0",
+    "eslint-config-airbnb": "^9.0.1",
+    "eslint-plugin-import": "^1.12.0",
+    "eslint-plugin-jsx-a11y": "^2.0.1",
     "eslint-plugin-react": "^5.2.2",
     "html-webpack-plugin": "^2.22.0",
     "imports-loader": "^0.6.5",
+    "json-loader": "^0.5.4",
     "open-browser-webpack-plugin": "0.0.2",
     "reselect": "^2.5.3",
     "style-loader": "^0.13.1",
@@ -33,6 +38,7 @@
     "webpack-dev-server": "^1.14.1"
   },
   "dependencies": {
+    "antd": "^1.8.0",
     "bootstrap": "^3.3.7",
     "d3": "^4.1.1",
     "jquery": "^3.1.0",

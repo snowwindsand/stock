@@ -29,6 +29,13 @@ module.exports = {
 			test: /\.js[x]?$/,
 			exclude:/node-modules/,
 			loader:'babel'	
+		},
+		{
+			test: /\.json$/,
+			exclude: [
+				"configs"
+			],
+			loader : 'json'
 		}]
 	},
 	plugins:[

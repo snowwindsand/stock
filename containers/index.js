@@ -4,6 +4,7 @@ import React, {
 import {
 	connect
 } from 'react-redux'
+import ReactDOM from 'react-dom'
 import {createSelector} from 'reselect'
 import {bindActionCreators} from 'redux'
 import StockCode from '../components/stock-code'
@@ -14,10 +15,13 @@ class StockApp extends Component {
 	constructor(props) {
 		super(props);
 		this.handleAdd = this.handleAdd.bind(this);
+		// this.handleEnter = this.handleEnter.bind(this);
+	}
+	componentDidMount(){
+		ReactDOM.findDOMNode(this).addEventListener('enter',this.handleEnter);
 	}
 	handleAdd(code) {
-		console.log(code);
-		const {actions} = this.props;
+		const { actions } = this.props;
 		actions.addStock(code);
 	}
 	//mapStateToProps已经转换

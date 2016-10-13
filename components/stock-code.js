@@ -13,6 +13,7 @@ class StockCode extends Component {
 	handleAdd(e) {
 		let code = this.refs.stockCode.value;
 		this.props.handleAdd(code);
+		this.refs.stockCode.value = '';
 	}
 
 	render() {

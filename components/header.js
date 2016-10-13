@@ -1,4 +1,5 @@
 import React, {Component} from 'react';
+import { Link } from 'react-router';
 
 class Header extends Component {
     constructor(props) {
@@ -9,7 +10,9 @@ class Header extends Component {
     render() {
         return (
             <div>
-                
+                <ul className="nav nav-pills">
+                    <li role="presentation"><Link to="/"
+                </ul>
             </div>
         );
     }
