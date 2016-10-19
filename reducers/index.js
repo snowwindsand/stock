@@ -4,6 +4,8 @@ import {
 
 import * as ActionTypes from '../actions/constants'
 
+import errorReducer from './error.js'
+
 
 const dataArrived = (state = [], action) => {
 	switch (action.type) {
@@ -27,13 +29,14 @@ const addStock = (state = [], action) => {
 	}
 }
 
-const errorReceived= (state={},action) => {
+// const errorReceived= (state={},action) => {
 	
-}
+// }
 
 const rootReducer = combineReducers({
 	stockdatas: dataArrived,
-	stockcodes: addStock
+	stockcodes: addStock,
+	error: errorReducer,
 })
 
 export default rootReducer;
